@@ -1,0 +1,23 @@
+216 CONSTANT REGPORT
+208 CONSTANT DATPORT
+
+: REGS
+	CLS
+	." YM2149" CR
+	." Real" CR
+	CR
+	16 0
+	DO
+		I .
+		I 10 < IF ."  " THEN
+		
+		I REGPORT OUT
+		255 DATPORT OUT
+		
+		I REGPORT OUT
+		REGPORT IN .
+		
+		CR
+	LOOP
+	CR
+;     
